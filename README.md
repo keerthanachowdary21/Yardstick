@@ -19,14 +19,6 @@ A web application for tracking income and expenses with data visualization capab
 - Zod for validation
 - React Hook Form
 
-## Setup Instructions
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/personal-finance-visualizer.git
-   cd personal-finance-visualizer
-   ```
-
 
 ## Implementation Notes
 
