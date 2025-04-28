@@ -1,0 +1,56 @@
+@baseUrl = http://localhost:5000/api
+
+### Get all transactions
+GET {{baseUrl}}/transactions HTTP/1.1
+Content-Type: application/json
+
+### Create a new transaction (income)
+POST {{baseUrl}}/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+  "amount": 1500,
+  "description": "Monthly Salary",
+  "type": "income",
+  "category": "Salary",
+  "date": "2023-05-15"
+}
+
+### Create a new transaction (expense)
+POST {{baseUrl}}/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+  "amount": 75.50,
+  "description": "Grocery shopping",
+  "type": "expense",
+  "category": "Food",
+  "date": "2023-05-16"
+}
+
+### Update a transaction (replace :id with actual ID)
+PUT {{baseUrl}}/transactions/:id HTTP/1.1
+Content-Type: application/json
+
+{
+  "amount": 80.25,
+  "description": "Grocery shopping (updated)",
+  "type": "expense",
+  "category": "Food",
+  "date": "2023-05-16"
+}
+
+### Delete a transaction (replace :id with actual ID)
+DELETE {{baseUrl}}/transactions/:id HTTP/1.1
+Content-Type: application/json
+
+### Test validation - should return errors
+POST {{baseUrl}}/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+  "amount": -100,
+  "description": "AB",
+  "type": "invalid",
+  "category": "X"
+}
